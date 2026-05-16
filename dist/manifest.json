@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "GetFocusedAI",
+  "version": "0.1.0",
+  "description": "AI-powered focus sidebar for students.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "scripting",
+    "sidePanel",
+    "activeTab",
+    "desktopCapture",
+    "windows",
+    "idle"
+  ],
+  "background": {
+    "service_worker": "background/background.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' https://js.puter.com; child-src 'self'; media-src https: data: blob:;"
+  },
+  "sandbox": {
+    "pages": [
+      "tts-sandbox.html"
+    ]
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open GetFocusedAI"
+  }
+}

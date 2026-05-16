@@ -1,0 +1,1 @@
+async function e(){try{await chrome.sidePanel.setPanelBehavior({openPanelOnActionClick:!0})}catch(n){console.error("Unable to configure GetFocusedAI side panel behavior.",n)}}chrome.runtime.onInstalled.addListener(()=>{e()});chrome.runtime.onStartup.addListener(()=>{e()});
